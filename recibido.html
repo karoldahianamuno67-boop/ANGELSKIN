@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Solicitud recibida | ANGELSKIN</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            🦋 ANGELSKIN
+        </a>
+
+        <div class="navbar-nav ms-auto">
+
+            <a class="nav-link" href="index.html">
+                Inicio
+            </a>
+
+            <a class="nav-link" href="servicios.html">
+                Servicios
+            </a>
+
+            <a class="nav-link" href="contacto.html">
+                Contacto
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= RECIBIDO ================= -->
+
+<section class="recibido">
+
+    <div class="container">
+
+        <div class="text-center">
+
+            <p class="marca-recibido">
+                🦋 ANGELSKIN
+            </p>
+
+            
+            
+
+            <h1>
+                ¡Solicitud recibida!
+            </h1>
+
+            <p class="mensaje-recibido">
+                Gracias por confiar en ANGELSKIN.
+                Hemos recibido los datos de tu solicitud.
+            </p>
+
+        </div>
+
+
+        <!-- ================= RESUMEN ================= -->
+
+        <div class="resumen">
+
+            <h2 class="text-center mb-4">
+                Resumen de tu solicitud
+            </h2>
+
+
+            <div class="datos">
+
+                <p>
+                    👤 <strong>Nombre:</strong>
+                    <span id="nombreRecibido"></span>
+                </p>
+
+                <p>
+                    📧 <strong>Correo:</strong>
+                    <span id="correoRecibido"></span>
+                </p>
+
+                <p>
+                    📱 <strong>Teléfono:</strong>
+                    <span id="telefonoRecibido"></span>
+                </p>
+
+                <p>
+                    🌸 <strong>Servicio:</strong>
+                    <span id="servicioRecibido"></span>
+                </p>
+
+                <p>
+                    📅 <strong>Fecha:</strong>
+                    <span id="fechaRecibida"></span>
+                </p>
+
+                <p>
+                    💌 <strong>Mensaje:</strong>
+                    <span id="mensajeRecibido"></span>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= BOTONES ================= -->
+
+        <div class="text-center mt-4">
+
+            <p>
+                Pronto nos pondremos en contacto contigo
+                para confirmar tu cita. 💗
+            </p>
+
+            <a
+                href="index.html"
+                class="btn btn-reserva me-2"
+            >
+                🏠 Volver al inicio
+            </a>
+
+            <a
+                href="contacto.html"
+                class="btn btn-reserva"
+            >
+                🌸 Nueva reserva
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container text-center py-4">
+
+        <h4>
+            🦋 ANGELSKIN
+        </h4>
+
+        <p>
+            Belleza · Cuidado · Bienestar
+        </p>
+
+        <p>
+            📍 Medellín, Colombia
+        </p>
+
+        <p>
+            &copy; 2026 ANGELSKIN
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+
+    // Obtener la información guardada
+
+    const datosGuardados =
+        localStorage.getItem("reservaAngelSkin");
+
+
+    // Comprobar si existen datos
+
+    if (datosGuardados) {
+
+        const reserva =
+            JSON.parse(datosGuardados);
+
+
+        // Mostrar nombre
+
+        document.getElementById("nombreRecibido").textContent =
+            reserva.nombre || "No especificado";
+
+
+        // Mostrar correo
+
+        document.getElementById("correoRecibido").textContent =
+            reserva.correo || "No especificado";
+
+
+        // Mostrar teléfono
+
+        document.getElementById("telefonoRecibido").textContent =
+            reserva.telefono || "No especificado";
+
+
+        // Mostrar servicio
+
+        document.getElementById("servicioRecibido").textContent =
+            reserva.servicio || "No especificado";
+
+
+        
+
+        document.getElementById("fechaRecibida").textContent =
+            reserva.fecha || "No especificada";
+
+
+      
+
+        document.getElementById("mensajeRecibido").textContent =
+            reserva.mensaje || "No especificado";
+
+
+    } else {
+
+        
+
+        document.getElementById("nombreRecibido").textContent =
+            "No hay información";
+
+        document.getElementById("correoRecibido").textContent =
+            "No hay información";
+
+        document.getElementById("telefonoRecibido").textContent =
+            "No hay información";
+
+        document.getElementById("servicioRecibido").textContent =
+            "No hay información";
+
+        document.getElementById("fechaRecibida").textContent =
+            "No hay información";
+
+        document.getElementById("mensajeRecibido").textContent =
+            "No hay información";
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
